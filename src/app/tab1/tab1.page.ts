@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab1Page implements OnInit {
 
-  constructor() { }
+  constructor(
+    private activatedRoute: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    const someParam = this.activatedRoute.snapshot.parent.paramMap.get('someParam');
+    const someParamParent = this.activatedRoute.snapshot.parent.paramMap.get('someParam');
+    console.log('tab1 init', someParam, someParamParent);
   }
 
 }

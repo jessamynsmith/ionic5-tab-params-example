@@ -5,7 +5,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   // e.g. http://localhost:8100/tabs/tabs/tab1
-  { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
+  { path: ':someParam/tabs', loadChildren: './tabs/tabs.module#TabsPageModule' },
 ];
 
 @NgModule({
