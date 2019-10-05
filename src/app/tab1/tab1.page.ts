@@ -8,14 +8,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class Tab1Page implements OnInit {
 
+  someParam: string;
+
   constructor(
     private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    const someParam = this.activatedRoute.snapshot.parent.paramMap.get('someParam');
-    const someParamParent = this.activatedRoute.snapshot.parent.paramMap.get('someParam');
-    console.log('tab1 init', someParam, someParamParent);
+    this.someParam = this.activatedRoute.snapshot.parent.paramMap.get('someParam');
+    console.log('tab1 init', this.someParam);
   }
 
 }

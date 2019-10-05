@@ -16,8 +16,7 @@ export class TabsPage implements OnInit {
 
   ngOnInit() {
     this.someParam = this.activatedRoute.snapshot.parent.paramMap.get('someParam');
-    const someParamParent = this.activatedRoute.snapshot.parent.paramMap.get('someParam');
-    console.log('tabs init', this.someParam, someParamParent);
+    console.log('tabs init', this.someParam);
   }
 
 }
